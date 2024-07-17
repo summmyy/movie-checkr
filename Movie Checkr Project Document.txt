@@ -1,0 +1,6 @@
+Future features of Movie Checkr:
+- Make sure to add an add show button in menu
+- Results would be shown based on highest rated movies/shows
+- Add a show tracking feature so users can know which shows have been watched
+- Recommend users new shows based on their past watch history
+- show users features shows based on release date and popularity
