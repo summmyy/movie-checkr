@@ -6,7 +6,6 @@ import com.example.movie_checkr.repository.ShowsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -23,8 +22,8 @@ public class ShowsService {
         return showsRepository.findAll();
     }
 
-    public List<Shows> getShowsByTitle(String title) {
-        return showsRepository.findByTitle(title);
+    public Shows getShowsByTitle(String title) {
+        return (Shows) showsRepository.findByTitle(title);
     }
 
     public List<Shows> getShowsByGenre(String genre) {
