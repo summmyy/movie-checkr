@@ -2,6 +2,7 @@ package com.example.movie_checkr.controller;
 
 import com.example.movie_checkr.model.ShowType;
 import com.example.movie_checkr.model.Shows;
+import com.example.movie_checkr.service.AuthenticationService;
 import com.example.movie_checkr.service.ShowsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

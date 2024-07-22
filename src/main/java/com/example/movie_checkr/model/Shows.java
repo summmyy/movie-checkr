@@ -41,7 +41,6 @@ public class Shows {
 //    @Column(name = "show_poster", length = 2048)
 //    private String showPoster;
 
-    // Temporary field to hold the URL, not persisted
     @Column(name = "show_poster_url", length = 2048)
     private String showPosterUrl;
 
@@ -50,19 +49,6 @@ public class Shows {
 
     }
 
-    // Parameterized constructor
-    public Shows(Long id, String title, ShowType showType, String genre, String country, String description, Integer duration, Date releaseDate, String showPosterUrl) {
-        this.id = id;
-        this.title = title;
-        this.showType = showType;
-        this.genre = genre;
-        this.country = country;
-        this.description = description;
-        this.duration = duration;
-        this.releaseDate = releaseDate;
-//        this.showPoster = showPoster;
-        this.showPosterUrl = showPosterUrl;
-    }
 
     // Getters and setters
 

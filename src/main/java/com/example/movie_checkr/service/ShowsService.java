@@ -22,8 +22,8 @@ public class ShowsService {
         return showsRepository.findAll();
     }
 
-    public Shows getShowsByTitle(String title) {
-        return (Shows) showsRepository.findByTitle(title);
+    public List<Shows> getShowsByTitle(String title) {
+        return showsRepository.findByTitle(title);
     }
 
     public List<Shows> getShowsByGenre(String genre) {
