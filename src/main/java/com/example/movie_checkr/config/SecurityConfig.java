@@ -1,7 +1,6 @@
 package com.example.movie_checkr.config;
 
 import com.example.movie_checkr.filter.JwtAuthenticationFilter;
-import com.example.movie_checkr.service.ShowsService;
 import com.example.movie_checkr.service.UserDetailsImp;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -30,12 +30,13 @@ public class SecurityConfig {
         this.jwtAuthenticationFilter = authenticationFilter;
     }
 
+    @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception{
 
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
-                        req -> req.requestMatchers("/api/shows/**")
+                        req -> req.requestMatchers("/auth/login/**", "/auth/register/**")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()
