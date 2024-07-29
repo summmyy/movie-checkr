@@ -24,6 +24,32 @@ public class ShowsService {
 
     public List<Shows> getShowsByTitle(String title) {
         return showsRepository.findByTitle(title);
+
+        /*
+
+        List<Shows> similarShows;
+        List<Shows> shows = showsService.getShowsByTitle(title);
+
+
+        if (shows > 0){
+           for i=0; i<len(shows.tags); i++{
+                for j=0; j<len(show.tags); j++{
+                    if (show.tags[j] == shows.tags[i]){
+                        similarShows.append(show)
+                    }
+                }
+           }
+
+           shows.append(similarShows)
+
+           return ResponseEntity.ok(shows)
+           }
+           else{
+            return ResponseEntity.notfound()
+           }
+
+
+         */
     }
 
     public List<Shows> getShowsByGenre(String genre) {

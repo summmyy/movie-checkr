@@ -36,7 +36,7 @@ public class ShowsController {
 
     @GetMapping("/search/{title}")
     public ResponseEntity<List<Shows>> getShowsByTitle(@PathVariable String title) {
-        List<Shows> shows = (List<Shows>) showsService.getShowsByTitle(title);
+        List<Shows> shows = showsService.getShowsByTitle(title);
         return ResponseEntity.ok(shows);
     }
 

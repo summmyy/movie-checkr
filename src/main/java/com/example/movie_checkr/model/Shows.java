@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
+
 @Entity
 @Table(name = "Shows")
 public class Shows {
@@ -13,7 +14,7 @@ public class Shows {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", nullable = false)
+    @Column(name = "title", nullable = false, unique = true)
     private String title;
 
     @Enumerated(EnumType.STRING)
@@ -37,9 +38,6 @@ public class Shows {
     @Column(name = "release_date")
     private Date releaseDate;
 
-//    @Lob
-//    @Column(name = "show_poster", length = 2048)
-//    private String showPoster;
 
     @Column(name = "show_poster_url", length = 2048)
     private String showPosterUrl;
@@ -107,14 +105,6 @@ public class Shows {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
-
-//    public byte[] getShowPoster() {
-//        return showPoster;
-//    }
-
-//    public void setShowPoster(byte[] showPoster) {
-//        this.showPoster = showPoster;
-//    }
 
     public Date getReleaseDate() {
         return releaseDate;
