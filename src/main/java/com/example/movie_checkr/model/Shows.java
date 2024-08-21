@@ -1,13 +1,18 @@
 package com.example.movie_checkr.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
 @Table(name = "Shows")
+//@JsonIgnoreProperties(ignoreUnknown = true) // for ignoring unknown json fields when making post requests
 public class Shows {
 
     @Id
@@ -41,6 +46,9 @@ public class Shows {
 
     @Column(name = "show_poster_url", length = 2048)
     private String showPosterUrl;
+
+//    @OneToMany(mappedBy = "show", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Tags tags = new Tags();
 
     // Default constructor required by JPA
     public Shows() {
@@ -121,4 +129,5 @@ public class Shows {
     public void setShowPosterUrl(String showPosterUrl) {
         this.showPosterUrl = showPosterUrl;
     }
+
 }

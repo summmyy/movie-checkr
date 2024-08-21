@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tags")
+//@JsonIgnoreProperties(ignoreUnknown = true) // for ignoring unknown json fields when making post requests
 public class Tags {
 
     @Id

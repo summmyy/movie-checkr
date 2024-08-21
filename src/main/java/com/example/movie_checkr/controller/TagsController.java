@@ -31,7 +31,7 @@ public class TagsController {
 
     @GetMapping("/search/{title}")
     public ResponseEntity<List<Tags>> getTagsByTitle(@PathVariable Shows title){
-        List<Tags> tags = tagsService.getSimilarTags(title.getTitle());
+        List<Tags> tags = tagsService.getSimilarTags(title);
         return ResponseEntity.ok(tags);
     }
 }
